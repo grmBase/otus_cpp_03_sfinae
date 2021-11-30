@@ -1,3 +1,25 @@
+
+# tmp файлы, которые генерит msvc
+**/*.vs
+
+# похоже каталоги с артефактами сборки
+**/out
+
+# Файл msvc когда он работает с cmake
+CMakeSettings.json
+
+# каталог сборки cmake
+cmake-build-debug/
+
+# tmp файлы idea
+**/*.idea
+
+# Создаёт qt creator
+CMakeLists.txt.user
+
+
+
+
 # Prerequisites
 *.d
 
