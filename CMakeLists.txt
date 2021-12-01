@@ -18,9 +18,10 @@ find_package(GTest REQUIRED)
 find_package(Doxygen QUIET)
 
 if (DOXYGEN_FOUND)
+
     # set input and output files
     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/doxyfile_config)
-    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/html)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
     message("debug start")
     message(DOXYGEN_IN)
