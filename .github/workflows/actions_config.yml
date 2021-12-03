@@ -42,9 +42,16 @@ jobs:
           asset_name: home_work3_project_name-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
 
+
       # выкладываем на github pages:
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.1.0
+        with:
+          doxyfile-path: "./doxyfile_config"
+          working-directory: "."
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{github.workspace}}/Doxyfile
+          publish_dir: ./html
+
