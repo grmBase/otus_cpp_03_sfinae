@@ -14,15 +14,11 @@ find_package(GTest REQUIRED)
 
 
 
-
 # имя основной утилиты будет таким же как и имя проекта?
 add_executable(print_ip
 src/main.cpp 
 src/work_obj.cpp)
 
-# пока не буду делать библиотеку, но по идее потом может и надо буует
-#add_library(helloworld lib.cpp)
-#add_executable(test_version test_version.cpp)
 
 set_target_properties(print_ip PROPERTIES
     CXX_STANDARD 17
@@ -32,23 +28,8 @@ target_include_directories(print_ip
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
-#  Пока не надо - тестов не добавляю
-#set_target_properties(test_version PROPERTIES
-#    COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
-#    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
-#)
 
-
-# Пока всё без доп библиотек
-#target_link_libraries(helloworld_cli PRIVATE
-#    helloworld
-#)
-#target_link_libraries(test_version
-#    ${Boost_LIBRARIES}
-#    helloworld
-#)
-
-
+# флаги придирчивого компилирования:
 if (MSVC)
     target_compile_options(print_ip PRIVATE
         /W4
@@ -73,6 +54,3 @@ set(CPACK_PACKAGE_CONTACT example@example.com)
 
 include(CPack)
 
-# Тестов пока нет
-#enable_testing()
-#add_test(test_version test_version)
