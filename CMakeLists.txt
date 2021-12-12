@@ -5,7 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 
 # имя проекта
-project(home_work3_project_name VERSION ${PROJECT_VESRION})
+project(print_ip VERSION ${PROJECT_VESRION})
 
 
 # поищем, потом может будем использовать
@@ -16,7 +16,7 @@ find_package(GTest REQUIRED)
 
 
 # имя основной утилиты будет таким же как и имя проекта?
-add_executable(home_work3
+add_executable(print_ip
 src/main.cpp 
 src/work_obj.cpp)
 
@@ -24,11 +24,11 @@ src/work_obj.cpp)
 #add_library(helloworld lib.cpp)
 #add_executable(test_version test_version.cpp)
 
-set_target_properties(home_work3 PROPERTIES
+set_target_properties(print_ip PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
-target_include_directories(home_work3
+target_include_directories(print_ip
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
@@ -50,18 +50,18 @@ target_include_directories(home_work3
 
 
 if (MSVC)
-    target_compile_options(home_work3 PRIVATE
+    target_compile_options(print_ip PRIVATE
         /W4
     )
 else ()
-    target_compile_options(home_work3 PRIVATE
+    target_compile_options(print_ip PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
 
 
 
-install(TARGETS home_work3 RUNTIME DESTINATION bin)
+install(TARGETS print_ip RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
