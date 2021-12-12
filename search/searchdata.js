@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "_acdfhimoprstw",
   1: "t",
-  2: "cmrw",
+  2: "cmprw",
   3: "fmp",
   4: "i",
   5: "_acdhps",
